@@ -20,7 +20,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public Customer getUserByName(String name) {
-        var customer = new Customer();
+        Customer customer = new Customer();
 
         customer.restore(Objects.requireNonNull(database.customers.stream().filter(customerData -> customerData.name.equals(name)).findFirst().orElse(null)));
 

@@ -27,7 +27,7 @@ public class ShoppingCartRepository implements IShoppingCartRepository
 
     @Override
     public ShoppingCart get(Id id) {
-        var cart = new ShoppingCart();
+        ShoppingCart cart = new ShoppingCart();
 
         cart.restore(Objects.requireNonNull(database.shoppingCarts.stream().filter(data -> data.id.equals(id)).findFirst().orElse(null)));
 

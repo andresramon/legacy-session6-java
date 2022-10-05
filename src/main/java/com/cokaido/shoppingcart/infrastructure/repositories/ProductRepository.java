@@ -21,7 +21,7 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public Product getByCode(String productCode) {
-        var product = new Product();
+        Product product = new Product();
 
         product.restore(Objects.requireNonNull(database.products.stream().filter(data -> data.code.equals(productCode)).findFirst().orElse(null)));
 
